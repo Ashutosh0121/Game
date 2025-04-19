@@ -30,11 +30,11 @@ export default function Pump() {
           break;
         case 1:
           Ballon_C.style.transition = "none";
-          Ballon_C.style.transform = "scale(0.2) translate(-27rem ,32rem)";
+          Ballon_C.style.transform = "scale(0.2) translatey(20rem)";
           break;
         case 2:
           Ballon_C.style.transition = "transform 1s ease-in-out";
-          Ballon_C.style.transform = "scale(0.5) translate(-7rem ,7rem)";
+          Ballon_C.style.transform = "scale(0.5) translatey(7rem)";
           break;
         case 3:
           Ballon_C.style.transition = "transform 1s ease-in-out";
@@ -119,6 +119,7 @@ export default function Pump() {
 
   return (
     <>
+    
     {game.map((item) => (
       <div key={item.id} className="move" onClick={() => pop(item.id)}>
         <img
@@ -153,23 +154,10 @@ export default function Pump() {
     </div>
   
     <div className="pump-container">
-      <img
-        id="handle"
-        onClick={Pump}
-        src={`${import.meta.env.BASE_URL}assets/Symbol 320001.png`}
-        alt="Handle"
-      />
-      <img
-        id="outlet"
-        src={`${import.meta.env.BASE_URL}assets/Symbol 320002.png`}
-        alt="Outlet"
-      />
+      <img  id="handle" onClick={Pump} src={`${import.meta.env.BASE_URL}assets/Symbol 320001.png`} alt="Handle" />
+      <img id="outlet"src={`${import.meta.env.BASE_URL}assets/Symbol 320002.png`} alt="Outlet"/>
       <div className="pump">
-        <img
-          id="pump"
-          src={`${import.meta.env.BASE_URL}assets/Symbol 320003.png`}
-          alt="Pump"
-        />
+        <img id="pump" src={`${import.meta.env.BASE_URL}assets/Symbol 320003.png`} alt="Pump" />
       </div>
     </div>
   </>
