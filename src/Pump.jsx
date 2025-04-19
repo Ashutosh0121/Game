@@ -101,7 +101,7 @@ export default function Pump() {
 
   const pop = (clickedId) => {
     setGame((prevGame) => prevGame.filter((item) => item.id !== clickedId));
-    const audio = new Audio("./public/pop.mp3");
+    const audio = new Audio(`${import.meta.env.BASE_URL}pop.mp3`);
     audio.play();
   };
 
