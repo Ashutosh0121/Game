@@ -107,10 +107,10 @@ export default function Pump() {
     const moveInterval = setInterval(() => {
       const balloons = document.querySelectorAll(".move");
       balloons.forEach((balloon) => {
-        const newTop = Math.random() * 90;
-        const newLeft = Math.random() * 90;
-        balloon.style.top = `${newTop}vh`;
-        balloon.style.left = `${newLeft}vw`;
+        const newBottom = Math.random() * 90;
+        const newRight = Math.random() * 90;
+        balloon.style.bottom = `${newBottom}vh`;
+        balloon.style.right = `${newRight}vw`;
       });
     }, 700);
 
