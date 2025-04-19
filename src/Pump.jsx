@@ -88,6 +88,7 @@ export default function Pump() {
 
     const audio = new Audio(air);             // to play the air sound
     audio.play();
+
     const handle = document.getElementById("handle");
     handle.style.transition = "transform 0.3s ease";
     handle.style.transform = "translateY(7rem)";
@@ -114,11 +115,11 @@ export default function Pump() {
       const balloons = document.querySelectorAll(".move");
       balloons.forEach((balloon) => {
         const newBottom = Math.random() * 90;
-        const newRight = Math.random() * 90;
+        const newRight = Math.random() * 95;
         balloon.style.bottom = `${newBottom}vh`;
         balloon.style.right = `${newRight}vw`;
       });
-    }, 700);
+    }, 1000);
 
     return () => clearInterval(moveInterval);
   }, [game]);
@@ -127,38 +128,18 @@ export default function Pump() {
   
   return (
     <>
-    
+  {/* itrration of game array to show the balloons */}
     {game.map((item) => (
       <div key={item.id} className="move" onClick={() => pop(item.id) }>
-        <img
-          id="ballon"
-          src={`${import.meta.env.BASE_URL}assets/${ballon[item.ballonIndex]}`}
-          alt="Ballon"
-        />
-        <img
-          id="alphabet"
-          src={`${import.meta.env.BASE_URL}assets/${Alphabet[item.alphaIndex]}`}
-          alt="Alphabet"
-        />
-        <img
-          src={`${import.meta.env.BASE_URL}assets/Symbol 100011.png`}
-          className="tail"
-          alt="Tail"
-        />
+        <img id="ballon" src={`${import.meta.env.BASE_URL}assets/${ballon[item.ballonIndex]}`} alt="Ballon" />
+        <img id="alphabet" src={`${import.meta.env.BASE_URL}assets/${Alphabet[item.alphaIndex]}`}alt="Alphabet" />
+        <img src={`${import.meta.env.BASE_URL}assets/Symbol 100011.png`} className="tail" alt="Tail"/>
       </div>
     ))}
   
     <div className="ballon-container">
-      <img
-        id="ballon"
-        src={`${import.meta.env.BASE_URL}assets/${ballon[ballonCount]}`}
-        alt="Ballon"
-      />
-      <img
-        id="alphabet"
-        src={`${import.meta.env.BASE_URL}assets/${Alphabet[alphaCount]}`}
-        alt="Alphabet"
-      />
+      <img id="ballon"src={`${import.meta.env.BASE_URL}assets/${ballon[ballonCount]}`} alt="Ballon" />
+      <img id="alphabet" src={`${import.meta.env.BASE_URL}assets/${Alphabet[alphaCount]}`} alt="Alphabet" />
     </div>
   
     <div className="pump-container">

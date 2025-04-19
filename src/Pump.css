@@ -78,6 +78,6 @@ html {
   position: absolute;
   bottom: 25rem;
   right: 33rem;
-  transition: all 2s linear;
+  transition: all 5s linear;
   z-index: 9;
 }
