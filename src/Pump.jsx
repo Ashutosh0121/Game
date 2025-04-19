@@ -119,63 +119,59 @@ export default function Pump() {
 
   return (
     <>
-      {game.map((item) => (
-        <div
-          key={item.id}
-          className="move"
-          onClick={() => pop(item.id)}
-        >
-          <img
-            id="ballon"
-            src={`/assets/${ballon[item.ballonIndex]}`}
-            alt="Ballon"
-          />
-          <img
-            id="alphabet"
-            src={`/assets/${Alphabet[item.alphaIndex]}`}
-            alt="Alphabet"
-          />
-          <img
-            src="/assets/Symbol 100011.png"
-            className="tail"
-            alt="Tail"
-          />
-        </div>
-      ))}
-
-      <div className="ballon-container">
+    {game.map((item) => (
+      <div key={item.id} className="move" onClick={() => pop(item.id)}>
         <img
           id="ballon"
-          src={`/assets/${ballon[ballonCount]}`}
+          src={`${import.meta.env.BASE_URL}assets/${ballon[item.ballonIndex]}`}
           alt="Ballon"
         />
         <img
           id="alphabet"
-          src={`/assets/${Alphabet[alphaCount]}`}
+          src={`${import.meta.env.BASE_URL}assets/${Alphabet[item.alphaIndex]}`}
           alt="Alphabet"
         />
-      </div>
-
-      <div className="pump-container">
         <img
-          id="handle"
-          onClick={Pump}
-          src="/assets/Symbol 320001.png"
-          alt="Handle"
+          src={`${import.meta.env.BASE_URL}assets/Symbol 100011.png`}
+          className="tail"
+          alt="Tail"
         />
-        <img
-          id="outlet"
-          src="/assets/Symbol 320002.png"
-          alt="Outlet"
-        />
-        <div className="pump">
-          <img
-            id="pump"
-            src="/assets/Symbol 320003.png"
-            alt="Pump"
-          />
-        </div>
       </div>
-    </>
+    ))}
+  
+    <div className="ballon-container">
+      <img
+        id="ballon"
+        src={`${import.meta.env.BASE_URL}assets/${ballon[ballonCount]}`}
+        alt="Ballon"
+      />
+      <img
+        id="alphabet"
+        src={`${import.meta.env.BASE_URL}assets/${Alphabet[alphaCount]}`}
+        alt="Alphabet"
+      />
+    </div>
+  
+    <div className="pump-container">
+      <img
+        id="handle"
+        onClick={Pump}
+        src={`${import.meta.env.BASE_URL}assets/Symbol 320001.png`}
+        alt="Handle"
+      />
+      <img
+        id="outlet"
+        src={`${import.meta.env.BASE_URL}assets/Symbol 320002.png`}
+        alt="Outlet"
+      />
+      <div className="pump">
+        <img
+          id="pump"
+          src={`${import.meta.env.BASE_URL}assets/Symbol 320003.png`}
+          alt="Pump"
+        />
+      </div>
+    </div>
+  </>
   );
 }
