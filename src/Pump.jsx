@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Pump.css";
+import pop_sound from "../src/pop.mp3";
 
 export default function Pump() {
   const [pumpCount, setPumpCount] = useState(0);
@@ -101,7 +102,7 @@ export default function Pump() {
 
   const pop = (clickedId) => {
     setGame((prevGame) => prevGame.filter((item) => item.id !== clickedId));
-    const audio = new Audio(`${import.meta.env.BASE_URL}pop.mp3`);
+    const audio = new Audio(pop_sound);
     audio.play();
   };
 
