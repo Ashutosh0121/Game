@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Pump.css";
 import pop_sound from "../src/pop.mp3";
+import air from "../src/air.mp3";
 
 export default function Pump() {
   const [pumpCount, setPumpCount] = useState(0);
@@ -85,6 +86,8 @@ export default function Pump() {
       pump.style.transform = "scale(1)";
     }, 300);
 
+    const audio = new Audio(air);             // to play the air sound
+    audio.play();
     const handle = document.getElementById("handle");
     handle.style.transition = "transform 0.3s ease";
     handle.style.transform = "translateY(7rem)";
