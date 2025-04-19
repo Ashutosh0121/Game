@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 
 html {
@@ -53,15 +54,14 @@ html {
 }
 
 #ballon {
-  /* height: 20rem; */
   height: 100%;
   position: absolute;
 }
 
 #alphabet {
-  height: 80%;
   position: absolute;
-
+  left: 1rem;
+  height: 80%;
 }
 
 .tail {
@@ -69,13 +69,6 @@ html {
   top: 3rem;
   left: -5rem;
   height: 20rem;
-}
-
-/* Grid layout utility (if needed) */
-.grid {
-  display: grid;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Repeating balloon elements */

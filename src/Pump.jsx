@@ -101,6 +101,8 @@ export default function Pump() {
 
   const pop = (clickedId) => {
     setGame((prevGame) => prevGame.filter((item) => item.id !== clickedId));
+    const audio = new Audio("./public/pop.mp3");
+    audio.play();
   };
 
   useEffect(() => {
@@ -117,11 +119,13 @@ export default function Pump() {
     return () => clearInterval(moveInterval);
   }, [game]);
 
+
+  
   return (
     <>
     
     {game.map((item) => (
-      <div key={item.id} className="move" onClick={() => pop(item.id)}>
+      <div key={item.id} className="move" onClick={() => pop(item.id) }>
         <img
           id="ballon"
           src={`${import.meta.env.BASE_URL}assets/${ballon[item.ballonIndex]}`}
